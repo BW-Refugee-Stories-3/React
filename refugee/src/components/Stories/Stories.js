@@ -1,9 +1,10 @@
 import React from 'react'
+import axios from 'axios'
 
-export default function Login() {
+export default function Stories() {
     return (
         <div>
-            login works
+            
         </div>
     )
 }
