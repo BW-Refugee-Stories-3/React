@@ -24,9 +24,32 @@ width:25%;
 text-align:center;
 justify-content:center;
 margin:10px auto;
+padding: 30px;
+border: 1.5px solid #2B2B2B;
 
 
 `
+
+const Input = styled.input`
+
+width:50%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 10px;
+
+`
+
+const TextArea = styled.textarea`
+width:80%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 10px;
+
+`
+
+
 const Title = styled.h1`
 color:black;
 font-size:2.5rem;
@@ -52,7 +75,7 @@ export default function SubmitForm() {
           <Forms>
           <Label htmlFor="nameInput">Name: </Label> 
          
-              <input
+              <Input
               maxLength='15'
               placeholder="Name"
               id="nameInput"
@@ -60,7 +83,7 @@ export default function SubmitForm() {
               type='text'
               />
               <Label htmlFor="locationInput">Location: </Label> 
-                <input
+                <Input
               maxLength='15'
               placeholder="Location"
               id="locationInput"
@@ -69,7 +92,7 @@ export default function SubmitForm() {
               />
 
             <Label htmlFor="dateInput">Date: </Label>   
-                <input
+                <Input
               maxLength='15'
               placeholder="Date"
               id="dateInput"
@@ -79,7 +102,7 @@ export default function SubmitForm() {
 
               <Label htmlFor="story">Your Story:</Label>
 
-              <textarea
+              <TextArea
               id="story"
               name="story"
               placeholder="What's your story?"

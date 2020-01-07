@@ -24,6 +24,20 @@ width:25%;
 text-align:center;
 justify-content:center;
 margin:10px auto;
+padding: 30px;
+border: 1.5px solid #2B2B2B;
+
+
+`
+
+const Input = styled.input`
+
+width:50%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 10px;
+
 
 
 `
@@ -70,7 +84,7 @@ const handleChanges = event => {
             <Title>Login Page</Title>
            <Form onSubmit={handleSubmit}>
                <Label htmlFor="userNameInput">Username: </Label> 
-               <input 
+               <Input 
                maxLength="20"
                placeholder="Username Here"
                id="userNameInput"
@@ -83,7 +97,7 @@ const handleChanges = event => {
 
            
                 <Label htmlFor="userNamePassword">Password: </Label>
-                <input 
+                <Input 
                maxLength="20"
                placeholder="Password Here"
                id="userNamePassword"
