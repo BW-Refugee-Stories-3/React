@@ -38,11 +38,19 @@ align-items:center;
 `
 
 
+const Label = styled.label`
+color:black;
+font-size:20px;
+
+`
+
+
 export default function SubmitForm() {
     return (
       <div>
           <Title>Submit your story here:</Title>
           <Forms>
+          <Label htmlFor="nameInput">Name: </Label> 
          
               <input
               maxLength='15'
@@ -51,6 +59,7 @@ export default function SubmitForm() {
               name='firstName'
               type='text'
               />
+              <Label htmlFor="locationInput">Location: </Label> 
                 <input
               maxLength='15'
               placeholder="Location"
@@ -58,6 +67,8 @@ export default function SubmitForm() {
               name='location'
               type='text'
               />
+
+            <Label htmlFor="dateInput">Date: </Label>   
                 <input
               maxLength='15'
               placeholder="Date"
@@ -65,6 +76,8 @@ export default function SubmitForm() {
               name='date'
               type='date'
               />
+
+              <Label htmlFor="story">Your Story:</Label>
 
               <textarea
               id="story"
