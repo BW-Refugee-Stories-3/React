@@ -1,0 +1,27 @@
+.signup {
+  min-height: 100vh;
+
+  > .form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 2rem;
+    text-transform: capitalize;
+    > label {
+      margin: 1rem 0;
+    }
+
+    > input,
+    textarea {
+      font-size: 2rem;
+    }
+    > textarea {
+      min-height: 500px;
+    }
+    > .submit {
+      margin: 1rem auto;
+      width: 200px;
+    }
+  }
+}

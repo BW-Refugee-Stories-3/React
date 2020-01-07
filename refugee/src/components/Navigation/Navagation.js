@@ -11,7 +11,6 @@ const Text = styled.span`
 export default function Navagation() {
   return (
     <div className="nav">
-      <btn />
       <Text>
         <NavLink activeClassName="active" to="/login">Login</NavLink>
       </Text>
