@@ -1,5 +1,4 @@
-import React from 'react'
-import {Formik, Form, Field} from 'formik'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -69,13 +68,24 @@ font-size:20px;
 
 
 export default function SubmitForm() {
+    const [form, setForm] = useState({
+        firstname:"",
+        location:"",
+        date:"",
+        story:"",
+    });
+
+    const onInputChange = event => {
+
+    };
+
     return (
       <div>
           <Title>Submit your story here:</Title>
           <Forms>
           <Label htmlFor="nameInput">Name: </Label> 
          
-              <Input
+              <Input onChange={onInputChange}
               maxLength='15'
               placeholder="Name"
               id="nameInput"
@@ -83,7 +93,7 @@ export default function SubmitForm() {
               type='text'
               />
               <Label htmlFor="locationInput">Location: </Label> 
-                <Input
+                <Input onChange={onInputChange}
               maxLength='15'
               placeholder="Location"
               id="locationInput"
@@ -92,7 +102,7 @@ export default function SubmitForm() {
               />
 
             <Label htmlFor="dateInput">Date: </Label>   
-                <Input
+                <Input onChange={onInputChange}
               maxLength='15'
               placeholder="Date"
               id="dateInput"
@@ -102,10 +112,11 @@ export default function SubmitForm() {
 
               <Label htmlFor="story">Your Story:</Label>
 
-              <TextArea
+              <TextArea onChange={onInputChange}
               id="story"
               name="story"
               placeholder="What's your story?"
+              maxLength="328"
               />
 
               <Button>Submit Story</Button>

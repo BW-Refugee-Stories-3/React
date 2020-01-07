@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -109,9 +110,6 @@ const handleChanges = event => {
                <Button type="submit">Login</Button>
 
                </Form>
-           
-               
-          
            
            
         </div>

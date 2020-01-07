@@ -10,7 +10,7 @@ export default function Navagation() {
 
       <NavLink activeClassName="active" to="/submitstory">Submit Story</NavLink>
 
-      <NavLink activeClassName="active" to="/story">Stories</NavLink>
+      <NavLink activeClassName="active" to="/stories">Stories</NavLink>
       
       <NavLink activeClassName="active" to="/login">Login</NavLink>
       
