@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
 import Navagation from "./components/Navigation/Navagation";
-import Login from "./components/Navigation/Login/Login";
-import Signup from "./components/Navigation/Signup/Signup";
+import LoginForm from "./components/Navigation/Login/LoginForm";
+import SignupForm from "./components/Navigation/Signup/SignupForm";
+import Stories from "./components/Stories/Stories";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -12,9 +13,11 @@ function App() {
         <Navagation />
       </div>
 
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/signup" component={SignupForm} />
+      <Route path="/stories" component={Stories} />
     </>
+     
   );
 }
 
