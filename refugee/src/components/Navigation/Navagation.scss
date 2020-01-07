@@ -1,8 +1,15 @@
 .nav {
   display: flex;
   justify-content: flex-end;
-
+  align-items: center;
   background: darkgreen;
+
+  min-height: 100px;
+}
+
+a {
+  font-size: 3rem;
+  padding: 0 30px;
 }
 
 a.active {
