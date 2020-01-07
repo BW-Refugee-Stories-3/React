@@ -9,8 +9,8 @@ justify-content:center;
 align-items:center;
 background: transparent;
 border-radius: 5px;
-border-color: darkgreen;
-color:darkgreen;
+border-color: grey;
+color:black;
 margin: 10px auto;
 padding:10px;
 font-size: 15px;
@@ -29,13 +29,13 @@ margin:10px auto;
 `
 
 const Label = styled.label`
-color:darkgreen;
+color:black;
 font-size:20px;
 
 `
 
 const Title = styled.h1`
-color:darkgreen;
+color:black;
 font-size:2.5rem;
 text-align:center;
 justify-content:center;

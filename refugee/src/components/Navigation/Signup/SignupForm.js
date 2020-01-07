@@ -4,6 +4,24 @@ import * as Yup from "yup";
 import axios from "axios";
 import "./Signup.scss";
 import { baseUrl } from "../../../util";
+import styled from 'styled-components'
+
+const Button = styled.button`
+
+text-align:center;
+justify-content:center;
+align-items:center;
+background: transparent;
+border-radius: 5px;
+border-color: grey;
+color:black;
+margin: 10px auto;
+padding:10px;
+font-size: 15px;
+width:20%;
+`
+
+
 // {
 //     "email": "user@website.com" // must be a valid email
 //     "story": "I want to be an admin very badly pls let me" // must be a string, max length 328 characters long
@@ -79,9 +97,9 @@ export default function Signup() {
               placeholder="type story"
             />
             <ErrorMessage name="story" className="error" component="div" />
-            <button type="submit" className="submit" disabled={isSubmitting}>
+            <Button type="submit" className="submit" disabled={isSubmitting}>
               Submit
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>
