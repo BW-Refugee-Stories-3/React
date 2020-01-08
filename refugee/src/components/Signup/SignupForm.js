@@ -3,8 +3,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import "./Signup.scss";
-import { baseUrl } from "../../../util";
+import { baseUrl } from "../../util";
 import styled from 'styled-components'
+import { useHistory } from "react-router-dom";
 
 const Button = styled.button`
 
@@ -28,8 +29,7 @@ width:20%;
 //     "username": "refugeeAdmin" // must be at least 4 charaters long
 //     "password": "aPassword" // must be at least 6 charaters long
 // }
-import { useHistory } from "react-router-dom";
-import { baseUrl } from "../../util";
+
 
 export default function Signup() {
   const history = useHistory();

@@ -5,40 +5,49 @@ import { baseUrl } from "../../util";
 import { useHistory } from "react-router-dom";
 
 const Button = styled.button`
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  border-radius: 5px;
-  border-color: darkgreen;
-  color: darkgreen;
-  margin: 10px auto;
-  padding: 10px;
-  font-size: 15px;
-  width: 20%;
-`;
+text-align:center;
+justify-content:center;
+align-items:center;
+background: transparent;
+border-radius: 5px;
+border-color: grey;
+color:black;
+margin: 10px auto;
+padding:10px;
+font-size: 15px;
+width:20%;
+`
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  text-align: center;
-  justify-content: center;
-  margin: 10px auto;
-`;
+const Form =styled.form`
+display:flex;
+flex-direction:column;
+width:25%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 30px;
+border: 1.5px solid #2B2B2B;
+`
+
+const Input = styled.input`
+width:50%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 10px;
+`
 
 const Label = styled.label`
-  color: darkgreen;
-  font-size: 20px;
-`;
+color:black;
+font-size:20px;
+`
 
 const Title = styled.h1`
-  color: darkgreen;
-  font-size: 2.5rem;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-`;
+color:black;
+font-size:2.5rem;
+text-align:center;
+justify-content:center;
+align-items:center;`
 
 export default function Login() {
   const history = useHistory();
@@ -73,7 +82,7 @@ export default function Login() {
       <Title>Login Page</Title>
       <Form onSubmit={handleSubmit}>
         <Label htmlFor="userNameInput">Username: </Label>
-        <input
+        <Input
           maxLength="20"
           placeholder="Username Here"
           id="userNameInput"
@@ -84,7 +93,7 @@ export default function Login() {
         />
 
         <Label htmlFor="userNamePassword">Password: </Label>
-        <input
+        <Input
           maxLength="20"
           placeholder="Password Here"
           id="userNamePassword"

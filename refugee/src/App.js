@@ -1,12 +1,11 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import "./App.css";
 import Navagation from "./components/Navigation/Navagation";
 import SubmitForm from "./components/Navigation/Submit/SubmitForm";
 import { Route } from "react-router-dom";
 import LoginForm from "./components/Login/LoginForm";
 import SignupForm from "./components/Signup/SignupForm";
-import Stories from "./components/Stories/Stories";
+import Stories from "./components/Stories/StoriesPage";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Process from "./components/Process/Process";
 import ProcessId from "./components/ProcessId/ProcessId";
