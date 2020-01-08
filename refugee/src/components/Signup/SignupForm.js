@@ -7,6 +7,8 @@ import { baseUrl } from "../../util";
 import styled from 'styled-components'
 import { useHistory } from "react-router-dom";
 
+
+
 const Button = styled.button`
 
 text-align:center;
@@ -19,7 +21,7 @@ color:black;
 margin: 10px auto;
 padding:10px;
 font-size: 15px;
-width:20%;
+width:20%;label>
 `
 
 
@@ -65,6 +67,7 @@ export default function Signup() {
       >
         {({ isSubmitting }) => (
           <Form className="signup form">
+            <h1>Sign up here:</h1>
             <label htmlFor="username">username: </label>
             <Field
               id="username"

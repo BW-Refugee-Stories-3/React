@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Alert } from 'reactstrap'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -72,12 +73,20 @@ font-size:20px;
 
 
 export default function SubmitForm() {
+
+
+  const [visible, setVisible] = useState(true);
+  const onDismiss = () => setVisible(false);
+
     const [form, setForm] = useState({
         firstname:"",
         location:"",
         date:"",
         story:"",
     });
+
+    
+
 
     const onInputChange = event => {
       setForm({
@@ -133,6 +142,7 @@ export default function SubmitForm() {
               <Button>Submit Story</Button>
 
           </Forms>
+          <Alert color="primary" isOpen={visible} toggle={onDismiss}>Thank you for submitting your story!</Alert>
 
       </div>
             
