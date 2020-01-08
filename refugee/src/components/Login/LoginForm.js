@@ -16,6 +16,7 @@ margin: 10px auto;
 padding:10px;
 font-size: 15px;
 width:20%;
+
 `
 
 const Form =styled.form`
@@ -27,6 +28,7 @@ justify-content:center;
 margin:10px auto;
 padding: 30px;
 border: 1.5px solid #2B2B2B;
+box-shadow: 5px 10px 18px #888888;
 `
 
 const Input = styled.input`
@@ -47,7 +49,9 @@ color:black;
 font-size:2.5rem;
 text-align:center;
 justify-content:center;
-align-items:center;`
+align-items:center;
+
+`
 
 export default function Login() {
   const history = useHistory();

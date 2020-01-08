@@ -25,6 +25,7 @@ justify-content:center;
 margin:10px auto;
 padding: 30px;
 border: 1.5px solid #2B2B2B;
+box-shadow: 5px 10px 18px #888888;
 
 
 `
@@ -36,6 +37,7 @@ text-align:center;
 justify-content:center;
 margin:10px auto;
 padding: 10px;
+
 
 `
 
@@ -54,7 +56,9 @@ color:black;
 font-size:2.5rem;
 text-align:center;
 justify-content:center;
-align-items:center;
+align-items:center
+
+
 
 
 `
@@ -76,13 +80,20 @@ export default function SubmitForm() {
     });
 
     const onInputChange = event => {
-
+      setForm({
+        ...form,
+        [event.target.name]: event.target.value
+      });
+      console.log(event.target.name);
     };
-
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log(form);
+  }
     return (
       <div>
           <Title>Submit your story here:</Title>
-          <Forms>
+          <Forms onSubmit={handleSubmit}>
           <Label htmlFor="nameInput">Name: </Label> 
          
               <Input onChange={onInputChange}
