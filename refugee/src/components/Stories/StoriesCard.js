@@ -11,6 +11,7 @@ justify-content: space-between;
 border:1px solid grey;
 width: 50%;
 margin: 5px auto;
+box-shadow: 2px 1px 7px #888888;
 `
 const NameH2 = styled.h2`
 

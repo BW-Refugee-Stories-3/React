@@ -75,7 +75,7 @@ font-size:20px;
 export default function SubmitForm() {
 
 
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const onDismiss = () => setVisible(false);
 
     const [form, setForm] = useState({
@@ -139,7 +139,7 @@ export default function SubmitForm() {
               maxLength="328"
               />
 
-              <Button>Submit Story</Button>
+              <Button onClick={ () => {setVisible(true)}  }>Submit Story</Button>
 
           </Forms>
           <Alert color="primary" isOpen={visible} toggle={onDismiss}>Thank you for submitting your story!</Alert>
