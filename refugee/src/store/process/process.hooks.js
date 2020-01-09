@@ -1,3 +1,4 @@
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getProcess,
@@ -9,27 +10,35 @@ import {
 export function useGetProcess() {
   const dispatch = useDispatch();
   const state = useSelector(state => state.processReducer.stories);
+  const dispatchGetProcess = useCallback(() => {
+    dispatch(getProcess());
+  }, [dispatch]);
 
-  function dispatchGetProcess() {
-    return dispatch(getProcess());
-  }
+  useEffect(() => {
+    dispatchGetProcess();
+  }, [dispatchGetProcess]);
 
   return [state, dispatchGetProcess];
 }
 
 export function useGetProcessId(id) {
   const dispatch = useDispatch();
-  const state = useSelector(state =>
-    state.processReducer.stories.find(story => story.id === id)
-  );
+  const state = useSelector(state => {
+    return state.processReducer.stories.find(
+      story => Number(story.id) === Number(id)
+    );
+  });
 
-  function dispatchGetProcessId() {
+  const dispatchGetProcessId = useCallback(() => {
     dispatch(getProcessId(id));
-  }
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    dispatchGetProcessId();
+  }, [dispatchGetProcessId]);
 
   return [state, dispatchGetProcessId];
 }
-
 
 export function usePutProcessId(id) {
   const dispatch = useDispatch();
@@ -37,8 +46,8 @@ export function usePutProcessId(id) {
     state.processReducer.stories.find(story => story.id === id)
   );
 
-  function dispatchPutProcessId() {
-    dispatch(putProcessId(id));
+  function dispatchPutProcessId(data, state = id) {
+    dispatch(putProcessId(state, data));
   }
 
   return [state, dispatchPutProcessId];
@@ -50,8 +59,8 @@ export function useDeleteProcessId(id) {
     state.processReducer.stories.find(story => story.id === id)
   );
 
-  function dispatchDeleteProcessId() {
-    dispatch(deleteProcessId(id));
+  function dispatchDeleteProcessId(state = id) {
+    dispatch(deleteProcessId(state));
   }
 
   return [state, dispatchDeleteProcessId];

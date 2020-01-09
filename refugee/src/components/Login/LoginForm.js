@@ -3,70 +3,70 @@ import axios from "axios";
 import styled from "styled-components";
 import { baseUrl } from "../../util";
 import { useHistory } from "react-router-dom";
+import { useSetToken } from "../../store";
 
 const Button = styled.button`
-text-align:center;
-justify-content:center;
-align-items:center;
-background: transparent;
-border-radius: 5px;
-border-color: grey;
-color:black;
-margin: 10px auto;
-padding:10px;
-font-size: 15px;
-width:20%;
-`
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 5px;
+  border-color: grey;
+  color: black;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 15px;
+  width: 20%;
+`;
 
-const Form =styled.form`
-display:flex;
-flex-direction:column;
-width:25%;
-text-align:center;
-justify-content:center;
-margin:10px auto;
-padding: 30px;
-border: 1.5px solid #2B2B2B;
-`
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  text-align: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1.5px solid #2b2b2b;
+`;
 
 const Input = styled.input`
-width:50%;
-text-align:center;
-justify-content:center;
-margin:10px auto;
-padding: 10px;
-`
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 10px;
+`;
 
 const Label = styled.label`
-color:black;
-font-size:20px;
-`
+  color: black;
+  font-size: 20px;
+`;
 
 const Title = styled.h1`
-color:black;
-font-size:2.5rem;
-text-align:center;
-justify-content:center;
-align-items:center;`
+  color: black;
+  font-size: 2.5rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function Login() {
+  const [token, dispatchSetToken] = useSetToken();
   const history = useHistory();
   const initialState = { username: "", password: "" };
   const [form, setForm] = useState(initialState);
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(form);
     axios
       .post(`${baseUrl}/api/auth/login`, form)
       .then(res => {
         console.log(res);
-        window.sessionStorage.setItem("token", res.data.token);
+        dispatchSetToken(res.data.token);  
+        setForm(initialState); 
+        history.push("/process");
       })
-      .catch(err => console.error(err))
-      .finally(() => {
-        setForm(initialState);
-        history.push("/");
-      });
+      .catch(err => console.error(err));
   };
 
   const handleChanges = event => {

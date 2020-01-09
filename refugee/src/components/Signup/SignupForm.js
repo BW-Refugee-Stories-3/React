@@ -4,24 +4,23 @@ import * as Yup from "yup";
 import axios from "axios";
 import "./Signup.scss";
 import { baseUrl } from "../../util";
-import styled from 'styled-components'
+import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { useSetToken } from "../../store";
 
 const Button = styled.button`
-
-text-align:center;
-justify-content:center;
-align-items:center;
-background: transparent;
-border-radius: 5px;
-border-color: grey;
-color:black;
-margin: 10px auto;
-padding:10px;
-font-size: 15px;
-width:20%;
-`
-
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 5px;
+  border-color: grey;
+  color: black;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 15px;
+  width: 20%;
+`;
 
 // {
 //     "email": "user@website.com" // must be a valid email
@@ -30,15 +29,17 @@ width:20%;
 //     "password": "aPassword" // must be at least 6 charaters long
 // }
 
-
 export default function Signup() {
   const history = useHistory();
-  
+  const [token, dispatchSetToken] = useSetToken();
   async function handleSubmit(form) {
     try {
-      const res = await axios.post(`${baseUrl}/api/auth/register`, form);
-      console.log(res);
-      return res;
+      const resRegister = await axios.post(`${baseUrl}/api/auth/register`, form);
+      const resLogin = await axios.post(`${baseUrl}/api/auth/login`, form);
+      dispatchSetToken(resLogin.data.token);  
+
+      console.log(resLogin);
+      return resLogin;
     } catch (err) {
       console.error(err);
     }
