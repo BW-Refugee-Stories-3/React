@@ -8,7 +8,10 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { useSetToken } from "../../store";
 
+
+
 const Button = styled.button`
+
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -66,6 +69,7 @@ export default function Signup() {
       >
         {({ isSubmitting }) => (
           <Form className="signup form">
+            <h1>Sign up here:</h1>
             <label htmlFor="username">username: </label>
             <Field
               id="username"

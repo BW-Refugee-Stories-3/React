@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useSetToken } from "../../store";
 
 const Button = styled.button`
+
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -19,16 +20,19 @@ const Button = styled.button`
   width: 20%;
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  text-align: center;
-  justify-content: center;
-  margin: 10px auto;
-  padding: 30px;
-  border: 1.5px solid #2b2b2b;
-`;
+
+const Form =styled.form`
+display:flex;
+flex-direction:column;
+width:25%;
+text-align:center;
+justify-content:center;
+margin:10px auto;
+padding: 30px;
+border: 1.5px solid #2B2B2B;
+box-shadow: 5px 10px 18px #888888;
+`
+
 
 const Input = styled.input`
   width: 50%;
